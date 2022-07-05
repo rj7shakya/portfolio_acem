@@ -1,23 +1,23 @@
 const hobbies = ["Freelancer", "Software Developer", "Cricket Lover"];
 
-let count = 0;
-let index = 0;
+let hobbiesIndex = 0;
+let letterPointerIndex = 0;
 let currentHobby = "";
-let letter = "";
+let displayText = "";
 
 const typing = () => {
-  if (count === hobbies.length) {
-    count = 0;
+  if (hobbiesIndex === hobbies.length) {
+    hobbiesIndex = 0;
   }
 
-  currentHobby = hobbies[count];
-  letter = currentHobby.slice(0, ++index);
+  currentHobby = hobbies[hobbiesIndex];
+  displayText = currentHobby.slice(0, ++letterPointerIndex);
 
-  document.querySelector(".hero__text__dynamic").textContent = letter;
+  document.querySelector(".hero__text__dynamic").textContent = displayText;
 
-  if (letter.length === currentHobby.length) {
-    count++;
-    index = 0;
+  if (displayText.length === currentHobby.length) {
+    hobbiesIndex++;
+    letterPointerIndex = 0;
   }
 
   setTimeout(typing, 150);
